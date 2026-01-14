@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: app2-noprod1
+  name: app2-prod1
   namespace: openshift-gitops
 spec:
   generators:
@@ -9,7 +9,7 @@ spec:
       configMapRef: ocm-placement-generator
       labelSelector:
         matchLabels:
-          cluster.open-cluster-management.io/placement: app2-noprod1
+          cluster.open-cluster-management.io/placement: app2-prod1
       requeueAfterSeconds: 30
   syncPolicy:
     preserveResourcesOnDeletion: true
@@ -30,6 +30,6 @@ spec:
       source:
         path: ./applications
         repoURL: https://github.com/giovannisciortino/acm_appset_app2.git
-        targetRevision: noprod1
+        targetRevision: prod1
       syncPolicy:
         automated: {}

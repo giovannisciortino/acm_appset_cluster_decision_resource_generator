@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app2-acmhub
+  namespace: openshift-gitops
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: appset_placement
+    repoURL: https://github.com/giovannisciortino/acm_appset_cluster_decision_resource_generator.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}

@@ -21,7 +21,7 @@ spec:
         argocd.argoproj.io/skip-reconcile: "true"
       labels:
         apps.open-cluster-management.io/pull-to-ocm-managed-cluster: "true"
-      name: '{{name}}-app2-noprod3'
+      name: 'app2-noprod3'
     spec:
       destination:
         namespace: openshift-gitops
